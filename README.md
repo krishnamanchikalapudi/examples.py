@@ -2,5 +2,5 @@
 
 ## compile
 ``````````
-python -m compileall ./src/
+python -m compileall -l ./src/
 ``````````
