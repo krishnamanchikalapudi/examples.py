@@ -1,6 +1,6 @@
 """
+Session: 4
 Topic: Basic Operators
-Week: 5
 """
 num1 = 10
 num2 = 5
@@ -26,10 +26,3 @@ helloworld = "hello" + " " + "world"
 print("helloworld = ", helloworld)
 lotsofhellos = "hello " * 10
 print("lotsofhellos = ", lotsofhellos)
-
-# Operators with Lists
-even_numbers = [2,4,6,8]
-odd_numbers = [1,3,5,7]
-all_numbers = odd_numbers + even_numbers
-print("all_numbers = ", all_numbers)
-print("even_numbers * 3 = ", even_numbers * 3)
