@@ -3,9 +3,11 @@ Session: 9
 Topic: Open & read file
 """
 
-f = open('somefile.txt')
-for line in f:
-    print (line)
-f.close
+def readfromfile():
+    f = open('somefile.txt')
+    for line in f:
+        print (line)
+    f.close
+    print('Good bye!')
 
-print('Good bye!')
+readfromfile()

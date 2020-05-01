@@ -6,18 +6,22 @@ Topic: Open & write to file
 import uuid
 
 filename = 'somefile1.txt'
-writeToFile = open(filename, 'wt')
-uid = uuid.uuid1().int
-print('UID is {} '.format(uid))
-writeToFile.writelines('Uid is {}'.format(uid))
-writeToFile.close()
 
-print('Writing done! \n\n')
+def writetofile():
+    wToFile = open(filename, 'wt')
+    uid = uuid.uuid1().int
+    print('UID is {} '.format(uid))
+    wToFile.writelines('Uid is {}'.format(uid))
+    wToFile.close()
+    print('Writing done! \n\n')
 
 # read
-readFromFile = open(filename, 'rt')
-for line in readFromFile:
-    print (line)
-readFromFile.close()
+def readfromfile():
+    rFromFile = open(filename, 'rt')
+    for line in rFromFile:
+        print (line)
+    rFromFile.close()
+    print('reading done!')
 
-print('reading done!')
+writetofile()
+readfromfile()
