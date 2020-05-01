@@ -1,5 +1,16 @@
 # Object file
 *.o
-
+.pyc
+*.pyc
+.idea
+.idea/
+/.idea
+.settings/
+*.sublime-workspace
+*.code-workspace
 # Ada Library Information
 *.ali
+
+# System Files
+.DS_Store
+Thumbs.db
