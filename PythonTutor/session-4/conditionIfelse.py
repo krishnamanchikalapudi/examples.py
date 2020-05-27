@@ -3,7 +3,8 @@ Session: 4
 Topic: Conditional: IF ELSE statement
 """
 x = 20
-y = 10
+y = 100
+
 
 if (x > y):
     print ('x > y is true')

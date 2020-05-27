@@ -3,17 +3,19 @@ Session: 6
 Topic: Comparision Operators
 """
 x = 20
-y = 10
+y = 20
+
 
 if (x < y):
     print ('x < y')
+elif (x != y):
+    print('x != y')
+elif (x == y):
+    print('x == y')
 elif (x > y):
     print ('x > y')
 elif (x >= y):
     print ('x >= y')
 elif (x <= y):
     print ('x <= y')
-elif (x == y):
-    print('x == y')
-elif (x != y):
-    print('x != y')
+
