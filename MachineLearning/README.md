@@ -37,13 +37,13 @@ xcode-select --install
 ## Source folder structure
 `````
 python
-  |___ dataset
-  |    |___ download  -> download & extract files from internet
-  |    |___ parse  ->  Transform the files to MySQL format
-  |___ transform
-  |___ trainmodel
-  |___ predictions
-  |___ pipeline  -> automation scripts for models retraining
+  |___ docs              --> Package reference documentation
+  |___ src               --> Source code
+  |___ tests             --> Package integration and unit tests
+  |___ Makefile          --> Generic management tasks
+  |___ requirements.txt  --> Development dependencies
+  |___ setup.py          --> Package and distribution management
+  |___ README.md
 `````
 
 ## Code

@@ -1,0 +1,3 @@
+twilio >= 6.42.0  # https://pypi.org/project/twilio/
+# SpeechRecognition >= 3.8.1 # https://pypi.org/project/SpeechRecognition/
+# PyAudio >= 0.2.11 # https://pypi.org/project/PyAudio/
