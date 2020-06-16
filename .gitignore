@@ -1,7 +1,15 @@
 # Object file
 *.o
 .pyc
+__pycache__
+__pycache__/
+__pycache__/*
+/__pycache__
 *.pyc
+venv
+venv/
+venv/*
+/venv
 .idea
 .idea/
 /.idea
