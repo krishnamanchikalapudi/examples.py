@@ -18,5 +18,5 @@ print (f'y is {type(y)}')
 
 print ('the ceil of {} is {}'.format(q, math.ceil(q)))
 print ('the floor of {} is {}'.format(q, math.floor(q)))
-print ('absolute value of {} is {}'.format(p, math.fabs(p)))
+print ('absolute value of {} is {}'.format(q, math.fabs(q)))
 print ('factorial of {} is {}'.format(y, math.factorial(y)))
