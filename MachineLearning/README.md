@@ -13,18 +13,18 @@ Machine learning process at high level
 4. Test data: Evaluate model
 5. Improve: Improving the performance.
 
-Broadly, there are 3 types of [Machine Learning algorithms](docs/algorithms.md)
+Broadly, there are 3 types of Machine Learning algorithms
 1. Supervised Learning
-   * Linear Regression
-   * Logistic Regression
-   * Decision Tree
-   * Random Forest
-   * KNN
+   * [Linear Regression](docs/supervised/linear.md)
+   * [Logistic Regression](docs/supervised/logistic.md)
+   * [Decision Tree](docs/supervised/decision.md)
+   * [Random Forest](docs/supervised/random.md)
+   * [KNN](docs/supervised/knn.md)
 2. Unsupervised Learning
-   * Apriori
-   * K-means
+   * [Apriori](docs/unsupervised/apriori.md)
+   * [K-means](docs/unsupervised/kmeans.md)
 3. Reinforcement Learning
-   * Markov Decision Process
+   * [Markov Decision Process](docs/reinforcement/markov.md)
 
 ## Pre-requisite
 - [X] Python 3.7 or higher
