@@ -20,10 +20,13 @@ where
 
 
 ## Sample
+![Stock Price](images/linear.png)
+where
+* X is Date
+* Y is price
 ### DataSet
 Stock quote: 
-X is Date
-Y is price
+
 
 
 
