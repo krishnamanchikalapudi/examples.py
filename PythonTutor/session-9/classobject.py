@@ -10,12 +10,6 @@ class MyClass:
         print("init X = {}".format(self.x))
         print('Class initialize')
 
-
-    # constructor with variable
-    def __init__(self, abc):
-        print("init X = {}".format(self.x))
-        print('Class initialize with value {} '. format(abc))
-
     @classmethod
     def hello(self):
         y = 200 # global variable inside function only
@@ -34,11 +28,10 @@ class MyClass:
         print('destroy object')
 
 
-c = MyClass('arg1')
+c = MyClass()
 
-"""
+
 # print('X is {}'.format(self.x))
 print('c.X is {}'.format(c.x))
 print('hello method value is {}'.format(c.hello()))
 print('add method value is {}'.format(c.add(10, 20)))
-"""

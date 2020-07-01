@@ -5,7 +5,7 @@ Topic: Open & write to file
 
 import uuid
 
-filename = 'somefile1.txt'
+filename = '../session-10/somefile-1w.txt'
 
 def writetofile():
     wToFile = open(filename, 'wt')

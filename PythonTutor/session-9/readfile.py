@@ -4,7 +4,7 @@ Topic: Open & read file
 """
 
 def readfromfile():
-    f = open('somefile.txt')
+    f = open('../session-10/somefile-1.txt')
     for line in f:
         print (line)
     f.close
