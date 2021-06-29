@@ -18,7 +18,9 @@ venv/*
 *.code-workspace
 # Ada Library Information
 *.ali
-
+*.ipynb_checkpoints
+.ipynb_checkpoints
+*/temp
 # System Files
 .DS_Store
 Thumbs.db
