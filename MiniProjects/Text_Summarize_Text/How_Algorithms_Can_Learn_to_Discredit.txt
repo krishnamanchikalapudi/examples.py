@@ -1,0 +1,35 @@
+During a long bus ride across France, my neighbor was watching YouTube for hours, watching the auto-play recommendations at the end of the video. Since I worked on the algorithm that computes these recommendations, I was curious what they were about. In one of these videos, the topic was the extermination of a quarter of the world’s population. I joked: “So who wants us dead?” he explained: “There is a secret plan from the government. Hundreds of videos say so! The media is hiding it from you. Go to YouTube, and you’ll discover the truth!”. His excitement was simultaneously touching and disturbing.
+The algorithm I worked on had learned to exploit his credulity.
+AIs that Filter Social Media
+Artificial Intelligence (AI) is a type of algorithm that plays a major role on social media.
+On Facebook, most people have too many friends to see all of their updates. Hence, Facebook filters the posts using an AI developed by the most prestigious researchers in the field. On YouTube, the majority of views come from recommendations: the videos on the right side of each video. YouTube describes it as “the largest scale and most sophisticated industrial recommendation systems in existence”.
+Eventually, the majority of the information that is consumed on social media goes through such an AI filter. These AIs provide social media platforms with a competitive advantage compared to other media, because it enables
+“If your competitor is rushing to build AI and you don’t, it will crush you” — Elon Musk, July 2017
+Any bias in these AIs would have large impact on worldwide information. Hence, it’s important to understand how they are designed, and study their biases.
+AIs Are Designed to Maximize Watch Time
+At YouTube, we used a complex AI to pursue a simple goal: maximize watch time. Google explains this focus in the following statement:
+If viewers are watching more YouTube, it signals to us that they’re happier with the content they’ve found. It means that creators are attracting more engaged audiences. It also opens up more opportunities to generate revenue for our partners.
+Other AIs put more weight on other signals, such as “likes” on Facebook. In that case, we talk about maximizing engagement. The exact formula varies from company to company, but the goal is similar: increasing user interaction with the platform.
+In this post I bring attention to I bring attention to one possible side effect of maximizing engagement, which, I believe, is having a major impact worldwide.
+How AIs Amplify Resentment against Other Media
+Let’s imagine that some YouTube videos were to convince me that “the Media is lying”. I would respond by spending less time consuming “the media”, and, probably, more time on YouTube. Since YouTube optimizes watch time, these videos will become highly recommended.
+For instance, YouTube returns millions of videos for the search “the earth is flat”. Some users might click on videos that claim the earth is flat out of curiosity. These videos are efficient to keep attention, hence, the AI will recommend them. Some users will be recommended tens of such videos. A few might believe them; as one of them said : “There are 2 millions flat earth videos on YouTube, this can’t be BS!” These users might start distrusting “the media”, who hid such a crucial information from them. They will spend more time on YouTube than before; hence YouTube’s AI learns these videos increase user engagement, and increases recommendations for flat earth videos … We are facing a vicious circle.
+“The Media is Lying” is just one of the rhetoric that might be efficient to increase watch time. More generally:
+Any smart AI that optimizes engagement with itself will have a tendency to discourage engagement to other channels.
+How AIs Can Influence Content Creators
+“AI could start a war by doing fake news … and by manipulating information” — Elon Musk, July 2017
+If anti-media contents have more chances to get viral, many content creators will notice this trend, and produce more of this type of content to gain traction online. AI is not yet creating fake news and starting a war against the media per se, but it is incentivizing content creators and public figures to do so.
+Essentially, content creators are rewarded with “free advertisement” when their message furthers AI goals.
+Example of anti-media content on YouTube
+We built a tool to analyze which videos YouTube’s algorithm recommends the most on some topics such as science and elections: algotransparency.org. We noticed that in the US 2016 election, the candidate that was the most aggressive against media was recommended four times more than his opponent.
+During the French 2017 election, the three most recommended candidates by YouTube were the most virulent critics of the media.
+This week, we scrapped 1,050 videos recommended when searching for the Las Vegas shooting on YouTube. A majority of the most recommended videos were accusing the “fake mainstream media” of deliberately lying about the shooting.
+Las Vegas shooting? “Fake media” are covering up that the antifa are responsible. Global warming? A hoax. Michelle Obama? A transvestite. The Pope? A Satanist. In an excellent TED Talk, Zeynep Tufekci argues that AI build a dystopia to make us click on ads. In these dystopias, facts are are strange and often contradictory. But a theory is recurrent: the media is lying.
+What’s New
+Fake news and defamation are nothing new. What is new, though, is the role of AI in their propagation. AIs are designed to maximize watch time, which can have the side effect of favoring content that decreases engagement with other channels. Channels claiming “the media is lying” might benefit from a significant amount of “free advertisement”.
+Estimating Impact
+For the first time in history, we are building tools that outsmart us on some level. These tools can have complex, far-reaching repercussions that we don’t fully understand.
+The more complex AI gets, the more intractable its side effects will become. In particular, AIs for social media that maximizes watch time might amplify resentment against other media.
+Many YouTube channels and Facebook pages have already gathered billions of views by promoting anti-media content. How much does AI contribute to discrediting the media?
+To find out, we need to know if views on anti-media content come primarily from human recommendations or from AI recommendations.
+Only social media platforms have the answer.
