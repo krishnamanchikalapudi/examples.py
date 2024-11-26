@@ -9,6 +9,10 @@
     poetry install
 ``````
 
+## Scikit Algorithm
+
+<img src="https://scikit-learn.org/stable/_downloads/b82bf6cd7438a351f19fac60fbc0d927/ml_map.svg" />
+
 
 ## References
 - [python poetry](https://python-poetry.org/docs/#installation)
