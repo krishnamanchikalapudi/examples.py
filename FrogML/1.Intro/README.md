@@ -30,3 +30,7 @@
 xgb.save_model
 `````
 - Flask API in the [solution[(solution)] folder 
+
+## References
+- [xgboost_customer_churn](https://sagemaker-examples.readthedocs.io/en/latest/introduction_to_applying_machine_learning/xgboost_customer_churn/xgboost_customer_churn_outputs.html)
+- Source code: [https://github.com/aws/amazon-sagemaker-examples/tree/main/introduction_to_applying_machine_learning/xgboost_customer_churn](https://github.com/aws/amazon-sagemaker-examples/tree/main/introduction_to_applying_machine_learning/xgboost_customer_churn)

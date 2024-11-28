@@ -1,6 +1,7 @@
-import time
-import inspect, time, datetime, warnings
-from datetime import date, timedelta
+import inspect, time
+import pandas as pd
+from xgboost import XGBClassifier
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -9,6 +10,7 @@ import io
 from json import JSONEncoder
 import os.path
 from os import path
+import xgboost as xgb
 
 #app = Flask(__name__)
 app = Flask(__name__, static_folder='build', static_url_path='/')
@@ -21,9 +23,28 @@ def index():
     # print(f" METHOD: {method_name} at {datetime.now()}] ")
     return "Welcome to the JFrog Intro MLOps training session!\n"
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['POST'])
 def getstockinfo():
-        today = date.today()
-        startDate = today
+    returnVal = None
+    startTime = time.perf_counter()
+    try:
+        data = request.get_json()
+        df = pd.DataFrame(data)
 
+        # load the model
+        model = xgb.XGBClassifier()
+        model.load_model("churn_model.bin")
+        predictions = model.predict_proba(df)[:, 1]  # Get probabilities for "churn"
+        returnVal = jsonify({"churn_probabilities": predictions.tolist()})
+        print("Return churn probabilities: ", returnVal)
+
+    except Exception as err:
+        print("Error: ", str(err))
+
+    totalTime = (time.perf_counter() - startTime)
+    print(f"process completed in {format(totalTime, '6.3f')} seconds or {format(totalTime / 60, '6.3f')} minutes")  
+    return returnVal
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
     
