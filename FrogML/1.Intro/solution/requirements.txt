@@ -1,4 +1,5 @@
 Flask
+pytest
 requests
 pandas
 numpy

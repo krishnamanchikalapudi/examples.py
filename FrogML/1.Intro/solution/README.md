@@ -3,17 +3,40 @@
 
 
 ## BUILD
+### Script
+#### Compile and UnitTest
+`````
+./api.sh SRC
+`````
+#### Flask Service and Test Api
+`````
+./api.sh API-TEST
+`````
+
+### Step-By-Step
 #### install from the given requirements file
 `````
 pip install -r requirements.txt
 `````
-## compile
+
+#### compile
 ``````````
 python -m compileall -l ./
 ``````````
+
 #### unit test
 `````
 python3 -m unittest tests/ApiTest.py 
+`````
+
+#### Run Api
+`````
+flask --app src/PredictApi.py run
+`````
+
+#### TEST Api
+`````
+curl -X GET -H "Content-Type: application/json" http://127.0.0.1:5000/     
 `````
 
 ## Docker
@@ -31,5 +54,6 @@ curl -X POST -H "Content-Type: application/json" -d '[{"feature1": 0.5, "feature
 `````
 
 
-
-## TEST
+## References
+- [Python Module](https://docs.python.org/3/py-modindex.html)
+- [Python unitests](https://docs.python.org/3/library/unittest.html#module-unittest)
