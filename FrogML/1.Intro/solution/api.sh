@@ -36,7 +36,7 @@ srcCompile() {
 }
 apiTest() {
     echo "\n**** [START] API - TEST at $(date '+%Y-%m-%d-%H-%M') ****\n"
-    flask --app src/PredictApi.py run --debug & 
+    flask --app src/PredictApi.py run --port=5000 --debug & 
     sleep 3
 
     tests
