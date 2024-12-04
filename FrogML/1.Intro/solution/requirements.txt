@@ -1,8 +1,0 @@
-Flask
-requests
-pandas
-numpy
-scikit-learn
-ipython-autotime
-xgboost
-pylint
