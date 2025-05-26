@@ -12,7 +12,6 @@ python -m compileall -l ./src/
 
 #### unit test
 `````
-python3 -m unittest tests/common/MySqlDbConnectionTests.py 
-python3 scripts/collect/SecCompanyTickers.py
+python3 -m unittest tests/testme.py 
 `````
 
