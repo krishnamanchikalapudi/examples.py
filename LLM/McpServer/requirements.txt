@@ -6,7 +6,7 @@ pydantic-settings==2.1.0
 
 # Security & Authentication
 python-jose[cryptography]==3.3.0
-python-multipart==0.0.6
+python-multipart==0.0.18
 passlib[bcrypt]==1.7.4
 
 # Rate Limiting
@@ -27,7 +27,7 @@ opentelemetry-exporter-otlp==1.21.0
 
 # HTTP Client
 httpx==0.25.2
-requests==2.31.0
+requests==2.32.4
 
 # Utilities
 python-dotenv==1.0.0
