@@ -1,0 +1,26 @@
+[project]
+name = "hello-world"
+version = "0.1.0"
+description = "Hello World MCP"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+   "fastapi",
+    "mcp[cli]",
+    "uvicorn",
+    "httpx",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "hatchling",
+    "pytest",
+    "pytest-asyncio",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

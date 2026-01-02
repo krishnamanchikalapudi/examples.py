@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aiagents-ns
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: springrestbootk8secret-secret
+  namespace: springrestbootk8secret-ns
+type: Opaque
+data:
+  db_url: amRiYzpteXNxbDovL2xvY2FsaG9zdDozMzA2L3NwcmluZ0s4U2Ri
+  db_username: aGVsbG9LOHNOYW1l
+  db_password: SGVsbG9LOHNQYXNzd29yZA==
+stringData:
+  db_url: 'jdbc:mysql://localhost:3306/springK8Sdb'
+  db_username: helloK8sName
+  db_password: HelloK8sPassword
+---

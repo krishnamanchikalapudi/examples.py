@@ -5,7 +5,14 @@ __pycache__
 __pycache__/
 __pycache__/*
 /__pycache__
+**/__pycache__
+.pytest_cache
+**/.pytest_cache
+uv.lock
+**/uv.lock
 *.pyc
+.venv
+**/.venv
 venv
 venv/
 venv/*
@@ -23,4 +30,6 @@ venv/*
 */temp
 # System Files
 .DS_Store
+**/.DS_Store
 Thumbs.db
+**/Thumbs.db

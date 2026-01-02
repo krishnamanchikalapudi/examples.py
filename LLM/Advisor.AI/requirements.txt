@@ -1,0 +1,16 @@
+Flask
+Flask_Cors
+pdf2image
+chromadb
+pypdf
+tiktoken
+pandas
+sentence_transformers
+wget
+huggingface
+langchain 
+langchain_chroma 
+langchain-huggingface 
+unstructured 
+langchain-ollama 
+ipython-autotime

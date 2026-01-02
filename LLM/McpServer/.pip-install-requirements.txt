@@ -1,0 +1,21 @@
+# Instructions for installing dependencies
+# 
+# If you encounter "Failed to build installable wheels" errors:
+#
+# 1. Ensure build tools are installed:
+#    pip install --upgrade pip setuptools wheel
+#
+# 2. For packages requiring compilation (like cryptography), install system dependencies:
+#    macOS: brew install openssl rust
+#    Ubuntu/Debian: sudo apt-get install build-essential libssl-dev
+#    Fedora: sudo dnf install gcc openssl-devel rust cargo
+#
+# 3. Install dependencies with pre-built wheels (preferred):
+#    pip install --only-binary :all: -r requirements.txt
+#
+# 4. If pre-built wheels are not available, install build dependencies:
+#    pip install cffi cryptography --upgrade
+#    pip install -r requirements.txt
+#
+# 5. Alternative: Use pre-compiled packages from conda-forge if available
+
