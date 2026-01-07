@@ -35,7 +35,7 @@ uv run src/main.py
 ### Unit Testing
 
 ```bash
-uv run pytest tests/maintests.py
+uv run pytest tests/maintests.py -v
 ```
 ![Unit Tests](./images/unittests.png)
 
@@ -61,7 +61,7 @@ In a **new terminal**, use the URL you copied to send requests.
 **Initialize:**
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
+curl -X POST "http://127.0.0.1:8000/messages/?session_id=123456" \
      -H "Content-Type: application/json" \
      -d '{
            "jsonrpc": "2.0",
@@ -82,7 +82,7 @@ curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
 **List Tools:**
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
+curl -X POST "http://127.0.0.1:8000/messages/?session_id=123456" \
      -H "Content-Type: application/json" \
      -d '{
            "jsonrpc": "2.0",
@@ -96,7 +96,7 @@ curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
 **Call Tool (index):**
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
+curl -X POST "http://127.0.0.1:8000/messages/?session_id=123456" \
      -H "Content-Type: application/json" \
      -d '{
            "jsonrpc": "2.0",
@@ -115,7 +115,7 @@ curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
 **Call Tool (greeting):**
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
+curl -X POST "http://127.0.0.1:8000/messages/?session_id=123456" \
      -H "Content-Type: application/json" \
      -d '{
            "jsonrpc": "2.0",
@@ -130,3 +130,13 @@ curl -X POST "http://127.0.0.1:8000/messages/?session_id=<YOUR_SESSION_ID>" \
 
 ![Tools call greeting curl](./images/tools-call-greeting-req.png)
 ![Tools call greeting resp](./images/tools-call-greeting-resp.png)
+
+### MCP Inspector
+
+The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a developer tool for testing and debugging MCP servers.
+
+Run the inspector (this uses `npx` to run the inspector, which then runs your server in `stdio` mode):
+
+```bash
+npx @modelcontextprotocol/inspector uv run src/main.py --transport stdio
+```
