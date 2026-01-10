@@ -27,9 +27,15 @@ venv/*
 *.ali
 *.ipynb_checkpoints
 .ipynb_checkpoints
-*/temp
+**/temp/
+**/temp/*
 # System Files
 .DS_Store
 **/.DS_Store
 Thumbs.db
 **/Thumbs.db
+.ruff_cache/
+.ruff_cache/*
+**/.ruff_cache/
+**/.ruff_cache/*
+
