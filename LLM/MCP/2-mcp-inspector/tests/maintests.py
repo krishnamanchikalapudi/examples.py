@@ -1,7 +1,5 @@
 import pytest
-
-from src.main import greeting, index
-
+from src.main import index, greeting
 
 @pytest.mark.asyncio
 async def test_index():

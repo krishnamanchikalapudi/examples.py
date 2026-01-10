@@ -6,8 +6,8 @@ from mcp.server.fastmcp import FastMCP
 from starlette.requests import Request
 from starlette.responses import Response
 
-# app = FastMCP("hello-world", host="127.0.0.1", port=8000)
-app = FastMCP("hello-world")
+# MCP Inspector Server
+app = FastMCP("mcp-inspector")
 
 
 @app.custom_route("/", methods=["GET"])
@@ -18,30 +18,41 @@ async def indexPage(request: Request) -> Response:
         return Response(f"Hello {name}, current time is {str(datetime.now())}")
 
     logging.info("WEB: Processing indexPage")
-    return Response("Hello World from MCP!")
+    return Response("MCP Inspector Server - Use MCP Inspector to interact with this server")
 
 
 @app.tool()
 async def index() -> str:
-    """Index page"""
+    """Get the index message"""
     logging.info("API: Processing index")
-    return "Hello World from MCP!"
+    return "MCP Inspector Server - Use MCP Inspector to interact with this server"
 
 
 @app.tool()
 async def greeting(name: str) -> str:
-    """Greet the user"""
+    """Greet the user with a personalized message"""
     logging.info("API: Processing greeting")
     return f"Hello {name}, current time is {str(datetime.now())}"
 
 
+@app.tool()
+async def get_server_info() -> str:
+    """Get information about the MCP server"""
+    logging.info("API: Processing get_server_info")
+    return "Hello World MCP Inspector Server v0.1.0 - A sample server for testing with MCP Inspector"
+
+
 def main():
-    """Initialize and run the server"""
-    parser = argparse.ArgumentParser(description="Hello World MCP Server")
-    parser.add_argument("--transport", default="sse", choices=["sse", "stdio"], help="Transport protocol to use")
+    """Initialize and run the MCP server"""
+    parser = argparse.ArgumentParser(description="MCP Inspector Server")
+    parser.add_argument(
+        "--transport",
+        default="stdio",
+        choices=["sse", "stdio"],
+        help="Transport protocol to use (stdio is required for MCP Inspector)",
+    )
     args = parser.parse_args()
     app.run(transport=args.transport)
-    # app.run()
 
 
 if __name__ == "__main__":

@@ -7,9 +7,9 @@
 ## Setup
 
 Install dependencies:
-
+- ruff install info at https://docs.astral.sh/ruff/installation/
 ```bash
-uv sync
+uv pip install -e ".[dev]" && uv sync
 ```
 
 ## Running the Server

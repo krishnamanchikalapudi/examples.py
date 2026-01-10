@@ -1,7 +1,7 @@
 [project]
-name = "hello-world"
+name = "mcp-inspector"
 version = "0.1.0"
-description = "Hello World MCP"
+description = "Hello World MCP Inspector"
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [
