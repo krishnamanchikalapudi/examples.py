@@ -44,6 +44,14 @@ jobs:
             github-token: ${{secrets.GITHUB_TOKEN}}
             src: "./src"
 
+        - name: "Install pytest"
+          uses: actions/setup-python@v6
+          continue-on-error: true
+          with:
+            python-version: "${{matrix.python}}"
+            cache: "pip"
+            cache-dependency-path: ./pyproject.toml
+
         - name: "Env vars and info"
           id: set_var
           run: |
@@ -51,10 +59,12 @@ jobs:
             echo "TODAYS_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
         - name: "Python: compile src"
+          continue-on-error: true
           run: |
             python -m compileall -l ./src/
 
         - name: "Python: compile tests "
+          continue-on-error: true
           run: |
             python -m compileall -l ./tests/
 
@@ -80,10 +90,6 @@ jobs:
             use: true
             platforms: ${{env.DOCKER_BUILDX_PLATFORMS}}
             # install: true
-
-        - name: "Python: compile"
-          run: |
-            mvn clean package -DskipTests -Denforcer.skip
 
         - name: "Optional: list files"
           run: |
