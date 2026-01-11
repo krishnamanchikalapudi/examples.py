@@ -9,6 +9,7 @@ async def test_index():
     print(result)
     assert result == "Hello World from MCP!"
 
+
 @pytest.mark.asyncio
 async def test_greeting():
     name = "TestUser"

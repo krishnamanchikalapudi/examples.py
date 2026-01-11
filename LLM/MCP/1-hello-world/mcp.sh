@@ -2,9 +2,9 @@
 arg=${1:-"START"}
 
 prereq(){
-    uv lock 
+    uv lock && uv sync && uv pip install -e ".[dev]" 
     uv pip install -e ".[dev]" && uv sync 
-    ruff check src/  # Lint all files in the current directory.
+    ruff check src/ --fix --statistics # Lint all files in the current directory.
     ruff format src/  # Format all files in the current directory.
     uv run pytest tests/maintests.py -v
 }
