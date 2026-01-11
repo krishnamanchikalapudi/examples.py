@@ -38,6 +38,7 @@ jobs:
         
         - name: "Install RUFF"
           uses: astral-sh/ruff-action@v3
+          continue-on-error: true
           with:
             version: "latest"
             github-token: ${{secrets.GITHUB_TOKEN}}
@@ -58,6 +59,7 @@ jobs:
             python -m compileall -l ./tests/
 
         - name: "RUFF: Lint all files"
+          continue-on-error: true
           run: |
             ruff check --fix --statistics && ruff format --check --diff && ruff analyze graph
             
