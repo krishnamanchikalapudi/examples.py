@@ -16,6 +16,12 @@ start(){
     sleep 5
     curl -N http://127.0.0.1:8000/sse & 
 }
+build(){
+    printf "\n ----------------------------------------------------------------  "
+    printf "\n Building Docker Image for Hello World MCP Application ... "
+    printf "\n ----------------------------------------------------------------  \n "
+    docker build -f ./Dockerfile -t mcp-hello-world:latest .
+}
 stop(){
     printf "\n ----------------------------------------------------------------  "
     printf "\n Stopping Hello World MCP Application ... "
@@ -75,6 +81,9 @@ if [[ -n $arg ]] ; then
             ;;
         TEST)
             test
+            ;;
+        BUILD)
+            build
             ;;
         STOP)
             stop
