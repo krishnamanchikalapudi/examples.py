@@ -113,7 +113,7 @@ test-apis(){
     
     # Get dynamic session_id from MCP server SSE endpoint
     printf "\n Getting session_id from MCP server...\n"
-    export session_id=$(get-session-id)
+    export session_id="1a1e6d0299d94522966ade8e7f0b67f9" # $(get-session-id)
     printf " Using session_id: %s\n" "$session_id"
     
     printf "\n\n ---- API: method: initialize ---- \n"
@@ -157,6 +157,9 @@ if [[ -n $arg ]] ; then
             ;;
         TEST)
             test
+            ;;
+        TEST-APIS)
+            test-apis
             ;;
         BUILD)
             build
