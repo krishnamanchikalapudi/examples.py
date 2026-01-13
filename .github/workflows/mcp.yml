@@ -160,4 +160,35 @@ jobs:
             echo "    - GitHub Attest:  ${{ env.DOCKER_DIGEST }} " >> $GITHUB_STEP_SUMMARY
             echo " " >> $GITHUB_STEP_SUMMARY
 
-  
+  helloWorldDockerPackageImageTest:
+    name: "Hello World Docker image test"
+    runs-on: ubuntu-latest
+    needs: helloWorldDockerPackage
+    env:
+      ARTIFACT_NAME: "mcp-hello-world"
+    steps:
+      - name: "Docker: authentication" 
+        id: config-docker
+        uses: docker/login-action@v3      # ref https://github.com/marketplace/actions/docker-login
+        with:
+          registry: ${{env.DOCKER_REGISTRY}}
+          username: ${{secrets.DOCKERHUB_USERNAME}}
+          password: ${{secrets.DOCKERHUB_PASSWORD}}
+
+      - name: "Pull LATEST image"
+        run: |
+          docker pull ${{env.DOCKER_ORG}}/${{env.ARTIFACT_NAME}}:latest
+
+      - name: "Pull ${{needs.helloWorldDockerPackage.outputs.image_todays_tag}} image"
+        continue-on-error: true
+        run: |
+          docker pull ${{env.DOCKER_ORG}}/${{env.ARTIFACT_NAME}}:${{needs.helloWorldDockerPackage.outputs.image_todays_tag}}
+
+      - name: "Docker Test: Summary "
+        run: |
+          echo "# :ship: Docker: Pull Summary :pushpin:" >> $GITHUB_STEP_SUMMARY
+          echo " " >> $GITHUB_STEP_SUMMARY
+          echo " " >> $GITHUB_STEP_SUMMARY
+          echo " Pulled docker" >> $GITHUB_STEP_SUMMARY
+          echo " - ${{env.DOCKER_ORG}}/${{env.ARTIFACT_NAME}}:latest " >> $GITHUB_STEP_SUMMARY
+          echo " - ${{env.DOCKER_ORG}}/${{env.ARTIFACT_NAME}}:${{needs.dockerPackage.outputs.image_todays_tag}} " >> $GITHUB_STEP_SUMMARY
