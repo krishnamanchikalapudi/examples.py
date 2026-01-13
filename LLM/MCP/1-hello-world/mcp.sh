@@ -10,7 +10,7 @@ prereq(){
 }
 start(){
     printf "\n ----------------------------------------------------------------  "
-    printf "\n Starting Hello World MCP Application ... "
+    printf "\n Starting MCP: Hello World service using SSE transport ... "
     printf "\n ----------------------------------------------------------------  \n "
     uv run src/main.py & 
     sleep 5
@@ -24,12 +24,16 @@ build(){
 }
 stop(){
     printf "\n ----------------------------------------------------------------  "
-    printf "\n Stopping Hello World MCP Application ... "
+    printf "\n Stopping MCP: Hello World service using SSE transport ... "
     printf "\n ----------------------------------------------------------------  \n "
 
     # uv stop
-    kill -9 $(lsof -ti tcp:8000)
-    exit 0
+    # kill -9 $(lsof -ti tcp:8000) &
+    # Kill process on port 8000, skip if error (no process running)
+    pid=$(lsof -ti tcp:8000 2>/dev/null)
+    if [ -n "$pid" ]; then
+        kill -9 "$pid" 2>/dev/null || true
+    fi
 }
 test(){
     test-web
@@ -87,6 +91,7 @@ if [[ -n $arg ]] ; then
             ;;
         STOP)
             stop
+            exit 0
             ;;
         *)
             echo "Invalid argument: $arg"
