@@ -1,22 +1,27 @@
-# Hello World MCP Example
+# Weather API - MCP Example
 
 ## Pre-requisites
-
 - [uv](https://github.com/astral-sh/uv) (Fast Python package installer and resolver)
 
-## Setup
-
-Install dependencies:
-- ruff install info at https://docs.astral.sh/ruff/installation/
+## API Service
+### Run the API service
 ```bash
-uv pip install -e ".[dev]" && uv sync
+cd api
+./api.sh 
 ```
+![Terminal](./images/api-cli.png)
 
-## Running the Server
+### Test via browser
+![API list](./images/api-list.png)
 
+![API response](./images/api-response.png)
+
+
+## MCP Server
 Run the MCP server (configured to use SSE transport):
 
 ```bash
+cd api 
 uv run src/main.py
 ```
 

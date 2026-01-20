@@ -30,9 +30,12 @@ stop(){
     # uv stop
     # kill -9 $(lsof -ti tcp:8000) &
     # Kill process on port 8000, skip if error (no process running)
-    pid=$(lsof -ti tcp:8000 2>/dev/null)
-    if [ -n "$pid" ]; then
-        kill -9 "$pid" 2>/dev/null || true
+    pids=$(lsof -ti tcp:8000 2>/dev/null)
+    if [ -n "$pids" ]; then
+        # Handle multiple PIDs - kill can accept multiple PIDs at once
+        echo "Killing processes: $pids"
+        # Convert newlines to spaces and kill all at once
+        kill -9 $(echo "$pids" | tr '\n' ' ') 2>/dev/null || true
     fi
 }
 test(){

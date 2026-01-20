@@ -11,7 +11,7 @@ dependencies = [
    "fastapi",
     "mcp[cli]",
     "uvicorn",
-    "httpx",
+    "pydantic",
 ]
 
 [project.urls]
