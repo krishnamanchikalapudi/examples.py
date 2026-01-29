@@ -46,7 +46,7 @@ test-web(){
 
 }
 test-apis(){
-    export session_id="11cd9b9b65e54ab4a4a1bb2f16b1dc2f"
+    export session_id="d8146709f22349c6a35349999ce944a7"
 
     printf "\n\n ---- API: method: initialize ---- \n"
     curl -X POST "http://127.0.0.1:8000/messages/?session_id=${session_id}" -H "Content-Type: application/json" -d '{  "jsonrpc": "2.0", "id": 1, "method": "initialize", "params": { "protocolVersion": "2024-11-05", "capabilities": {}, "clientInfo": { "name": "curl-client", "version": "1.0" }  } }'

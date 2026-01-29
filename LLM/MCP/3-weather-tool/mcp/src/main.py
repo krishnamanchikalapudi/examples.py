@@ -55,13 +55,11 @@ async def get_weather(cityName: str) -> str:
                 if "temperature" in data or "description" in data:
                     temp_c = float(data.get("temperature", 0))
                     desc = data.get("description", "N/A")
-                    icon = data.get("icon", "")
                 else:
                     current = data.get("current_condition", [{}])[0]
                     temp_c = float(current.get("temp_C", 0))
                     desc = current.get("weatherDesc", [{}])[0].get("value", "N/A")
-                    icon = current.get("weatherIconUrl", [{}])[0].get("value", "")
-                return f"The weather in {cityName} is {desc} with a temperature of {temp_c}°C and icon {icon}"
+                return f"The weather in {cityName} is {desc} with a temperature of {temp_c}°C "
             return f"Unable to fetch weather for {cityName}"
     except httpx.RequestError as exc:
         logging.error("API: Weather request failed: %s", exc)
