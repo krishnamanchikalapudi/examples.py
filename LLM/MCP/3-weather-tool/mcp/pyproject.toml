@@ -1,7 +1,7 @@
 [project]
-name = "hello-world"
+name = "weather-mcp"
 version = "0.1.0"
-description = "Hello World MCP"
+description = "Weather MCP"
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [
@@ -9,6 +9,7 @@ authors = [
 ]
 dependencies = [
    "fastapi",
+    "httpx",
     "mcp[cli]",
     "uvicorn",
     "pydantic",

@@ -72,27 +72,24 @@ test(){
     
     if [ "$http_code" = "200" ]; then
         echo "✓ Success! Status: $http_code"
-        echo "Response:"
-        echo "$body" | python3 -m json.tool 2>/dev/null || echo "$body"
     else
         echo "✗ Failed! Status: $http_code"
-        echo "Response: $body"
     fi
+    echo "$body" | python3 -m json.tool 2>/dev/null 
     
-    echo ""
-    echo "Testing root endpoint..."
-    response=$(curl -s -w "\nHTTP_STATUS:%{http_code}" -X GET "http://127.0.0.1:5000/")
+    echo " "
+    echo "Testing /city/New%20York endpoint..."
+    response=$(curl -s -w "\nHTTP_STATUS:%{http_code}" -X GET "http://127.0.0.1:5000/city/New%20York")
     http_code=$(echo "$response" | grep "HTTP_STATUS" | cut -d: -f2)
     body=$(echo "$response" | sed '/HTTP_STATUS/d')
-    
+
     if [ "$http_code" = "200" ]; then
         echo "✓ Success! Status: $http_code"
-        echo "Response:"
-        echo "$body" | python3 -m json.tool 2>/dev/null || echo "$body"
     else
-        echo "✗ Failed! Status: $http_code"
-        echo "Response: $body"
+        echo "✗ Failed! Status: $http_code" 
     fi
+     echo "$body" | python3 -m json.tool 2>/dev/null 
+
     
     echo ""
     echo "API Documentation available at: http://127.0.0.1:5000/docs"

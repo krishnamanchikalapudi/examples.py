@@ -4,8 +4,8 @@ from src.main import index, greeting
 @pytest.mark.asyncio
 async def test_index():
     result = await index()
-    print(result)
-    assert result == "Hello World from MCP!"
+    print(f"Result: {result}")
+    assert result == "Hello World from MCP Inspector!"
 
 @pytest.mark.asyncio
 async def test_greeting():

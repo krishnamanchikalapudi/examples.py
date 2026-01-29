@@ -25,7 +25,7 @@ async def indexPage(request: Request) -> Response:
 async def index() -> str:
     """Get the index message"""
     logging.info("API: Processing index")
-    return "MCP Inspector Server - Use MCP Inspector to interact with this server"
+    return "Hello World from MCP Inspector!"
 
 
 @app.tool()

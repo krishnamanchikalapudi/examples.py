@@ -1,6 +1,15 @@
 ## What is MCP?
 The Model Context Protocol (MCP) is an open standard that enables AI models to securely connect with external tools, data sources, and services. Instead of building custom integrations for each tool, MCP provides a universal interface.
 
+
+## Why MCP Matters
+MCP solves several key challenges in AI agent development:
+- Standardization: Common interface for models to interact with any tool
+- Extensibility: Easily add new capabilities to any MCP-compatible model
+- Interoperability: Tools built for one model work with any other MCP-compatible model
+- Composability: Combine multiple tools to build complex workflows
+
+
 ## Communication Flow
 The MCP protocol follows a request-response pattern:
 
@@ -9,16 +18,17 @@ sequenceDiagram
     participant AIA as 'AI Agent' 
     participant MCPP as 'MCP Protocol'
     participant MCPS as 'MCP Server'
-    AIA->>MCPP: 1. Discover Tools
-    MCPP->>MCPS: tools/list
-    MCPS->>MCPP: Available functions
-    MCPP->>AIA: Tool descriptions
-    AIA->>MCPP: 2. Call functions
-    MCPP->>MCPS: tools/list
-    MCPS->>MCPP: Execute functions
-    MCPP->>AIA: Function result
+    AIA->>+MCPP: 1. Discover Tools
+    MCPP->>+MCPS: tools/list
+    MCPS->>-MCPP: Available functions
+    MCPP->>-AIA: Tool descriptions
+    AIA->>+MCPP: 2. Call functions
+    MCPP->>+MCPS: tools/list
+    MCPS->>-MCPP: Execute functions
+    MCPP->>-AIA: Function result
     AIA->>AIA: 3. Process result
 ```
+
 
 ## MCP Message Types
 ### 1. Tool Discovery
